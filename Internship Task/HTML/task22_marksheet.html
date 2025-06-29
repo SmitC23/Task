@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Marksheet</title>
+</head>
+<body>
+  <h2>Student Marksheet</h2>
+  <form onsubmit="calculate(event)">
+    English: <input type="number" id="eng"><br>
+    Math: <input type="number" id="math"><br>
+    Science: <input type="number" id="sci"><br>
+    <button type="submit">Calculate</button>
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    function calculate(e) {
+      e.preventDefault();
+      let eng = parseInt(document.getElementById("eng").value);
+      let math = parseInt(document.getElementById("math").value);
+      let sci = parseInt(document.getElementById("sci").value);
+      let total = eng + math + sci;
+      let avg = total / 3;
+      document.getElementById("result").innerText = "Total: " + total + ", Average: " + avg;
+    }
+  </script>
+</body>
+</html>

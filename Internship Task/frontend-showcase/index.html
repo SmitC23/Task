@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Frontend Showcase</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    .box { background: #f8f9fa; border: 1px solid #ddd; padding: 10px; margin: 10px; }
+    .blur { filter: blur(2px); }
+    .card { margin: 10px; padding: 15px; border: 1px solid #ccc; box-shadow: 2px 2px 5px #999; }
+    .slider-img { width: 100%; max-width: 300px; height: auto; }
+    .animation-box { width: 100px; height: 100px; background: coral; animation: move 2s infinite alternate; }
+    @keyframes move { from { transform: translateX(0); } to { transform: translateX(100px); } }
+  </style>
+</head>
+<body class="container">
+
+  <h1 class="my-4 text-center">Frontend Features Showcase</h1>
+
+  <!-- Navigation (Task 14) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Showcase</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Flexbox (Task 11) -->
+  <h2>Flexbox Layout</h2>
+  <div class="d-flex">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+  </div>
+
+  <!-- Responsive Form (Task 15) -->
+  <h2>Responsive Form</h2>
+  <form class="row g-3">
+    <div class="col-md-6">
+      <label class="form-label">Name</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control">
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+
+  <!-- Cards (Task 35) -->
+  <h2 class="mt-4">Cards</h2>
+  <div class="row">
+    <div class="col-md-4 card">
+      <h5>Card Title</h5>
+      <p>This is a card example.</p>
+    </div>
+    <div class="col-md-4 card">
+      <h5>Card Title</h5>
+      <p>This is another card.</p>
+    </div>
+  </div>
+
+  <!-- Table Examples (Tasks 28, 36) -->
+  <h2 class="mt-4">Table</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr><th>#</th><th>Name</th><th>Course</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Smit</td><td>MERN</td></tr>
+      <tr><td>2</td><td>Karan</td><td>Java</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Sliders (Task 25, 33) -->
+  <h2>Slider</h2>
+  <img id="slider" class="slider-img" src="https://via.placeholder.com/300x200?text=1">
+  <div>
+    <button class="btn btn-secondary" onclick="prev()">Prev</button>
+    <button class="btn btn-secondary" onclick="next()">Next</button>
+  </div>
+
+  <!-- Blur & Animation Effects (Task 37, 38) -->
+  <h2 class="mt-4">Visual Effects</h2>
+  <div class="d-flex">
+    <img src="https://via.placeholder.com/100" class="blur me-3">
+    <div class="animation-box"></div>
+  </div>
+
+  <!-- Game (Tic Tac Toe & Match Game) -->
+  <h2 class="mt-4">Mini Game</h2>
+  <button onclick="alert('Tic Tac Toe Coming Soon')">Play Tic Tac Toe</button>
+  <button onclick="alert('Match Game Coming Soon')">Play Match Game</button>
+
+  <!-- Footer -->
+  <footer class="mt-5 text-center text-muted">
+    <p>&copy; 2025 Frontend Showcase</p>
+  </footer>
+
+  <!-- JS Slider Script -->
+  <script>
+    const imgs = [
+      "https://via.placeholder.com/300x200?text=1",
+      "https://via.placeholder.com/300x200?text=2",
+      "https://via.placeholder.com/300x200?text=3"
+    ];
+    let index = 0;
+    function showSlide() {
+      document.getElementById("slider").src = imgs[index];
+    }
+    function next() {
+      index = (index + 1) % imgs.length;
+      showSlide();
+    }
+    function prev() {
+      index = (index - 1 + imgs.length) % imgs.length;
+      showSlide();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slider Example</title>
+</head>
+<body>
+  <h2>Image Slider</h2>
+  <img id="slide" src="https://via.placeholder.com/300" width="300">
+  <br>
+  <button onclick="prev()">Prev</button>
+  <button onclick="next()">Next</button>
+
+  <script>
+    let images = [
+      "https://via.placeholder.com/300?text=1",
+      "https://via.placeholder.com/300?text=2",
+      "https://via.placeholder.com/300?text=3"
+    ];
+    let index = 0;
+
+    function show() {
+      document.getElementById("slide").src = images[index];
+    }
+
+    function next() {
+      index = (index + 1) % images.length;
+      show();
+    }
+
+    function prev() {
+      index = (index - 1 + images.length) % images.length;
+      show();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo List</title>
+</head>
+<body>
+  <h2>Todo List</h2>
+  <input type="text" id="task" placeholder="New Task">
+  <button onclick="addTask()">Add</button>
+  <ul id="list"></ul>
+
+  <script>
+    function addTask() {
+      let task = document.getElementById("task").value;
+      if (task === "") return;
+      let li = document.createElement("li");
+      li.innerText = task;
+      document.getElementById("list").appendChild(li);
+      document.getElementById("task").value = "";
+    }
+  </script>
+</body>
+</html>

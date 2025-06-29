@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Session Storage</title>
+</head>
+<body>
+  <h2>Session Storage Example</h2>
+  <input type="text" id="username" placeholder="Enter your name">
+  <button onclick="save()">Save</button>
+  <p id="output"></p>
+
+  <script>
+    function save() {
+      let name = document.getElementById("username").value;
+      sessionStorage.setItem("user", name);
+      document.getElementById("output").innerText = "Welcome " + name;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration</title>
+</head>
+<body>
+  <h2>Registration Form</h2>
+  <form onsubmit="return validate()">
+    Name: <input type="text" id="name"><br>
+    Email: <input type="email" id="email"><br>
+    Password: <input type="password" id="pass"><br>
+    <button type="submit">Register</button>
+  </form>
+
+  <script>
+    function validate() {
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let pass = document.getElementById("pass").value;
+      if (name.length < 3) {
+        alert("Name must be at least 3 characters.");
+        return false;
+      }
+      if (pass.length < 6) {
+        alert("Password must be at least 6 characters.");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</body>
+</html>
